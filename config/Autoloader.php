@@ -8,6 +8,12 @@ class Autoloader{
     }
 
     public static function autoload($class){
-        var_dump($class);
+        // App\src\Controller\HomeController
+        $class = str_replace("App", '',$class);
+        // src\Controller\HomeController
+        $class = str_replace("\\", '/',$class);
+        // src/Controller/HomeController
+
+        require_once '../' . $class . '.php';
     }
 }
