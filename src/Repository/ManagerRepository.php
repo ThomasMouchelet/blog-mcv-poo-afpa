@@ -2,6 +2,9 @@
 
 namespace App\src\Repository;
 
+use PDO;
+use Exception;
+
 class ManagerRepository
 {
     public $connection;
