@@ -6,14 +6,21 @@ use App\src\Repository\ArticleRepository;
 
 class ArticleController
 {
+    private $articleRepository;
+
+    public function __construct()
+    {
+        $this->articleRepository = new ArticleRepository();
+    }
+
     public function home(){
-        $repoArticle = new ArticleRepository();
-        $articles = $repoArticle->getArticles();
+        $articles = $this->articleRepository->getArticles();
         require "../templates/home.php";
     }
     public function single(){
-        // get repository
-        // getArticle()
-        // require single.php
+        var_dump("Single Controlle");
+        $articles = $this->articleRepository->getArticle($_GET['id']);
+        $article = $articles->fetch();
+        require "../templates/single.php";
     }
 }

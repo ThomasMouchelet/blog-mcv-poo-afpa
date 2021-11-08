@@ -7,12 +7,13 @@ Autoloader::register();
 
 use App\src\Controller\ArticleController;
 
+$appController = new ArticleController();
+
 if(isset($_GET['route'])){
     // rediriger vers une page
     if($_GET['route'] === "single"){
-
+        $appController->single();
     }
 }else{
-    $appController = new ArticleController();
     $appController->home();
 }

@@ -29,10 +29,15 @@ class ManagerRepository
         return $this->connection;
     }
 
-    public function createQuery($sql){
+    public function createQuery($sql, $parameters = null){
         $result = $this->checkConnection()->prepare($sql);
         $result->setFetchMode(PDO::FETCH_CLASS, static::class);
-        $result->execute();
+
+        if($parameters){
+            $result->execute($parameters);
+        }else{
+            $result->execute();
+        }
         
         return $result;
     }
