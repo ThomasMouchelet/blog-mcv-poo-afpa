@@ -9,7 +9,9 @@
 <body>
     <?php while ($article = $articles->fetch()) : ?>
         <div>
-            <h2><?= htmlspecialchars($article->title) ?></h2>
+            <a href="?route=single&id=<?= htmlspecialchars($article->id) ?>">
+                <h2><?= htmlspecialchars($article->title) ?></h2>
+            </a>
             <p><?= htmlspecialchars($article->content) ?></p>
             <p><?= htmlspecialchars($article->author) ?></p>
             <p><?= htmlspecialchars($article->createdAt) ?></p>
