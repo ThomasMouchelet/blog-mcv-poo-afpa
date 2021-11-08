@@ -1,7 +1,11 @@
 <?php
+
+require "../src/Controller/AppController.php";
+
 // ?route=home
 if(isset($_GET['route'])){
     // rediriger vers une page
 }else{
-    require "../templates/home.php";
+    $appController = new AppController();
+    $appController->home();
 }

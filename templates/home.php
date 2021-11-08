@@ -8,16 +8,14 @@
 </head>
 <body>
 
-    <div>
-        <h1>Title 1</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi cum distinctio voluptate sunt facere id libero dignissimos! Architecto, expedita! Nihil iure fugiat vel illum esse ut sint laborum quos quae.</p>
-        <a href="">Lire l'article</a>
-    </div>
-    <div>
-        <h1>Title 2</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi cum distinctio voluptate sunt facere id libero dignissimos! Architecto, expedita! Nihil iure fugiat vel illum esse ut sint laborum quos quae.</p>
-        <a href="">Lire l'article</a>
-    </div>
+    <?php while ($article = $articles->fetch()) : ?>
+        <div>
+            <h2><?= htmlspecialchars($article->title) ?></h2>
+            <p><?= htmlspecialchars($article->content) ?></p>
+            <p><?= htmlspecialchars($article->author) ?></p>
+            <p><?= htmlspecialchars($article->createdAt) ?></p>
+        </div>
+    <?php endwhile ?>
 
 </body>
 </html>
