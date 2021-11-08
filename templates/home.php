@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
     <?php while ($article = $articles->fetch()) : ?>
         <div>
             <h2><?= htmlspecialchars($article->title) ?></h2>

@@ -1,5 +1,4 @@
 <?php
-
 require "../src/Controller/AppController.php";
 
 // ?route=home

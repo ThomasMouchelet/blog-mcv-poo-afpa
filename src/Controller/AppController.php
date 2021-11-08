@@ -1,5 +1,4 @@
 <?php
-
 require "../src/Repository/ArticleRepository.php";
 
 class AppController
