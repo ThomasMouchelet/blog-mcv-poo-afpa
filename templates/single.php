@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <a href="?">Retour</a>
+
     <h1><?= htmlspecialchars($article->title) ?></h1>       
     <p><?= htmlspecialchars($article->content) ?></p>
     <p><?= htmlspecialchars($article->author) ?></p>
