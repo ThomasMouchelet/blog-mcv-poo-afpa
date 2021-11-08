@@ -18,7 +18,6 @@ class ArticleController
         require "../templates/home.php";
     }
     public function single(){
-        var_dump("Single Controlle");
         $articles = $this->articleRepository->getArticle($_GET['id']);
         $article = $articles->fetch();
         require "../templates/single.php";

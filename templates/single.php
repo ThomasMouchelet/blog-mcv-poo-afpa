@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Single page</h1>
 
-    <?php
-    var_dump($article);
-    ?>
+    <h1><?= htmlspecialchars($article->title) ?></h1>       
+    <p><?= htmlspecialchars($article->content) ?></p>
+    <p><?= htmlspecialchars($article->author) ?></p>
+    <p><?= htmlspecialchars($article->createdAt) ?></p>
 </body>
 </html>
