@@ -1,7 +1,10 @@
 <?php
-require "../src/Repository/ArticleRepository.php";
 
-class AppController
+namespace App\src\Controller;
+
+use App\src\Repository\ArticleRepository;
+
+class HomeController
 {
     public function home(){
         $repoArticle = new ArticleRepository();

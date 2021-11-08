@@ -1,22 +1,13 @@
 <?php
 
-class ArticleRepository
-{
-    public function getConnection(){
+namespace App\src\Repository;
 
-    }
+use App\src\Repository\ManagerRepository;
 
+class ArticleRepository extends ManagerRepository
+{ 
     public function getArticles(){
-        try {
-            $database = new PDO("mysql:host=localhost;dbname=blog-mvc-poo", "root", "root");
-            $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-
-        $result = $database->prepare('SELECT * FROM article');
-        $result->setFetchMode(PDO::FETCH_CLASS, static::class);
-        $result->execute();
+        $result = $this->createQuery('SELECT * FROM article');
         return $result;
     }
 }

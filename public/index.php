@@ -1,10 +1,15 @@
 <?php
-require "../src/Controller/AppController.php";
+require_once "../config/dev.php";
+require_once "../config/Autoloader.php";
 
-// ?route=home
+use App\config\Autoloader;
+Autoloader::register();
+
+use App\src\Controller\HomeController;
+
 if(isset($_GET['route'])){
     // rediriger vers une page
 }else{
-    $appController = new AppController();
+    $appController = new HomeController();
     $appController->home();
 }
