@@ -112,6 +112,6 @@ class Comment
 
     public function getFormatedDate()
     {
-        return date("d/m/Y H:i:s", strtotime($this->createdAt));
+        return date("d/m/Y H:i:s", strtotime(htmlspecialchars($this->createdAt)));
     }
 }
