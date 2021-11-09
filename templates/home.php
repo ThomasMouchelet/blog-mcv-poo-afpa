@@ -17,7 +17,7 @@
             </a>
             <p><?= htmlspecialchars($article->getContent()) ?></p>
             <p><?= htmlspecialchars($article->getAuthor()) ?></p>
-            <p><?= htmlspecialchars($article->getCreatedAt()) ?></p>
+            <p><?= htmlspecialchars($article->getFormatedDate()) ?></p>
         </div>
     <?php endforeach ?>
 

@@ -15,7 +15,7 @@
     <h1><?= htmlspecialchars($article->getTitle()) ?></h1>
     <p><?= htmlspecialchars($article->getContent()) ?></p>
     <p><?= htmlspecialchars($article->getAuthor()) ?></p>
-    <p><?= htmlspecialchars($article->getCreatedAt()) ?></p>
+    <p><?= htmlspecialchars($article->getFormatedDate()) ?></p>
 
     <?php while ($comment = $comments->fetch()) : ?>
         <hr>

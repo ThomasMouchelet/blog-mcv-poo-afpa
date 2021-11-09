@@ -109,4 +109,9 @@ class Article
 
         return $this;
     }
+
+    public function getFormatedDate()
+    {
+        return date("d/m/Y H:i:s", strtotime($this->createdAt));
+    }
 }
