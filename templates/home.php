@@ -10,16 +10,16 @@
 
 <body>
 
-    <?php while ($article = $articles->fetch()) : ?>
+    <?php foreach ($articles as $article) : ?>
         <div>
-            <a href="?route=single&id=<?= htmlspecialchars($article->id) ?>">
-                <h2><?= htmlspecialchars($article->title) ?></h2>
+            <a href="?route=single&id=<?= htmlspecialchars($article->getId()) ?>">
+                <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
             </a>
-            <p><?= htmlspecialchars($article->content) ?></p>
-            <p><?= htmlspecialchars($article->author) ?></p>
-            <p><?= htmlspecialchars($article->createdAt) ?></p>
+            <p><?= htmlspecialchars($article->getContent()) ?></p>
+            <p><?= htmlspecialchars($article->getAuthor()) ?></p>
+            <p><?= htmlspecialchars($article->getCreatedAt()) ?></p>
         </div>
-    <?php endwhile ?>
+    <?php endforeach ?>
 
 </body>
 
