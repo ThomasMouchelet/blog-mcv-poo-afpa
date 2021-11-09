@@ -17,14 +17,14 @@
     <p><?= htmlspecialchars($article->getAuthor()) ?></p>
     <p><?= htmlspecialchars($article->getFormatedDate()) ?></p>
 
-    <?php while ($comment = $comments->fetch()) : ?>
+    <?php foreach ($comments as $comment) : ?>
         <hr>
         <div>
-            <strong><?= htmlspecialchars($comment->pseudo) ?></strong>
-            <p><?= htmlspecialchars($comment->content) ?></p>
-            <p><?= date("d/m/Y H:i:s", strtotime(htmlspecialchars($comment->createdAt))) ?></p>
+            <strong><?= htmlspecialchars($comment->getPseudo()) ?></strong>
+            <p><?= htmlspecialchars($comment->getContent()) ?></p>
+            <p><?= $comment->getFormatedDate() ?></p>
         </div>
-    <?php endwhile ?>
+    <?php endforeach ?>
 </body>
 
 </html>
