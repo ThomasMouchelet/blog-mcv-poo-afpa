@@ -13,11 +13,13 @@ class ArticleController
         $this->articleRepository = new ArticleRepository();
     }
 
-    public function home(){
+    public function home()
+    {
         $articles = $this->articleRepository->getArticles();
         require "../templates/home.php";
     }
-    public function single(){
+    public function single()
+    {
         $articles = $this->articleRepository->getArticle($_GET['id']);
         $article = $articles->fetch();
         require "../templates/single.php";
