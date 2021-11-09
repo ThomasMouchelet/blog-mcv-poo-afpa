@@ -20,7 +20,7 @@
     <?php while ($comment = $comments->fetch()) : ?>
         <hr>
         <div>
-            <strong><?= htmlspecialchars($comment->pseudo) ?/strong>
+            <strong><?= htmlspecialchars($comment->pseudo) ?></strong>
             <p><?= htmlspecialchars($comment->content) ?></p>
             <p><?= date("d/m/Y H:i:s", strtotime(htmlspecialchars($comment->createdAt))) ?></p>
         </div>
