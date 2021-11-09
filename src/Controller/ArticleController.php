@@ -24,7 +24,7 @@ class ArticleController
     }
     public function single()
     {
-        $articles = $this->articleRepository->getArticle($_GET['id']);
+        $article = $this->articleRepository->getArticle($_GET['id']);
         $comments = $this->commentRepository->getCommentsByArticle($_GET['id']);
 
         require "../templates/single.php";

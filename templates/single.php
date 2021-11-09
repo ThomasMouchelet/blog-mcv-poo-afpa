@@ -12,10 +12,10 @@
 
     <a href="?">Retour</a>
 
-    <h1><?= htmlspecialchars($article->title) ?></h1>
-    <p><?= htmlspecialchars($article->content) ?></p>
-    <p><?= htmlspecialchars($article->author) ?></p>
-    <p><?= htmlspecialchars($article->createdAt) ?></p>
+    <h1><?= htmlspecialchars($article->getTitle()) ?></h1>
+    <p><?= htmlspecialchars($article->getContent()) ?></p>
+    <p><?= htmlspecialchars($article->getAuthor()) ?></p>
+    <p><?= htmlspecialchars($article->getCreatedAt()) ?></p>
 
     <?php while ($comment = $comments->fetch()) : ?>
         <hr>
