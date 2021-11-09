@@ -10,9 +10,7 @@
 
 <body>
 
-    <?php
-
-    while ($article = $articles->fetch()) : ?>
+    <?php while ($article = $articles->fetch()) : ?>
         <div>
             <a href="?route=single&id=<?= htmlspecialchars($article->id) ?>">
                 <h2><?= htmlspecialchars($article->title) ?></h2>
