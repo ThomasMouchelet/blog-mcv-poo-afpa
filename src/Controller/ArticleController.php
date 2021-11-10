@@ -37,6 +37,7 @@ class ArticleController
             $this->articleRepository->addArticle($post);
             header('Location: ?');
         }
+
         require "../templates/add_article.php";
     }
 
