@@ -19,8 +19,9 @@ class Router
             if ($_GET['route'] === "single") {
                 $this->articleController->single();
             } elseif ($_GET['route'] === "addArticle") {
-                // call methode addArticle in controller
                 $this->articleController->addArticle($_POST);
+            } elseif ($_GET['route'] === "addComment") {
+                $this->articleController->addCommentInArticle($_POST);
             }
         } else {
             $this->articleController->home();

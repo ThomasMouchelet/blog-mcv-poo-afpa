@@ -48,4 +48,11 @@ class CommentRepository extends ManagerRepository
 
         return $comments;
     }
+
+    public function addComment($commentPost)
+    {
+        extract($commentPost);
+        $sql = 'INSERT INTO comment (pseudo, content, article_id, createdAt) VALUES (?, ?, ?, NOW())';
+        $this->createQuery($sql, [$pseudo, $content, $article_id]);
+    }
 }

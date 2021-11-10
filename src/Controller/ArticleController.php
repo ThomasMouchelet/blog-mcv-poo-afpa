@@ -39,4 +39,12 @@ class ArticleController
         }
         require "../templates/add_article.php";
     }
+
+    public function addCommentInArticle($post)
+    {
+        if (isset($post['submit'])) {
+            $this->commentRepository->addComment($post);
+            header('Location: ?route=single&id=' . $post['article_id']);
+        }
+    }
 }

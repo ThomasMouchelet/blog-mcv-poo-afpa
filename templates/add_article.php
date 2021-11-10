@@ -12,8 +12,11 @@
 
     <form action="?route=addArticle" method="post">
         <input type="text" placeholder="title" name="title">
+        <br>
         <input type="text" placeholder="author" name="author">
+        <br>
         <textarea id="" cols="30" rows="10" name="content"></textarea>
+        <br>
         <input type="submit" name="submit">
     </form>
 

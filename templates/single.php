@@ -25,6 +25,15 @@
             <p><?= $comment->getFormatedDate() ?></p>
         </div>
     <?php endforeach ?>
+
+    <form action="?route=addComment" method="post">
+        <input type="text" hidden name="article_id" value="<?= htmlspecialchars($article->getId()) ?>">
+        <br>
+        <input type="text" placeholder="pseudo" name="pseudo">
+        <br>
+        <textarea name="content" cols="30" rows="2"></textarea>
+        <input type="submit" value="submit" name="submit">
+    </form>
 </body>
 
 </html>
