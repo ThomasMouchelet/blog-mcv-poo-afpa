@@ -13,12 +13,16 @@ class Router
         $this->articleController = new ArticleController();
     }
 
-    public function run(){
-        if(isset($_GET['route'])){
-            if($_GET['route'] === "single"){
+    public function run()
+    {
+        if (isset($_GET['route'])) {
+            if ($_GET['route'] === "single") {
                 $this->articleController->single();
+            } elseif ($_GET['route'] === "addArticle") {
+                // call methode addArticle in controller
+                $this->articleController->addArticle($_POST);
             }
-        }else{
+        } else {
             $this->articleController->home();
         }
     }

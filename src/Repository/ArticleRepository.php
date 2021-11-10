@@ -42,4 +42,11 @@ class ArticleRepository extends ManagerRepository
 
         return $article;
     }
+
+    public function addArticle($articlePost)
+    {
+        extract($articlePost);
+        $sql = 'INSERT INTO article (title, content, author, createdAt) VALUES (?, ?, ?, NOW())';
+        $this->createQuery($sql, [$title, $content, $author]);
+    }
 }

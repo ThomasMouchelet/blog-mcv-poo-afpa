@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <a href="?route=addArticle">Add new article</a>
 
     <?php foreach ($articles as $article) : ?>
         <div>
